@@ -45,7 +45,7 @@ Use a local web server because the application uses ES modules:
 ```bash
 python -m http.server 8000
 ```
-
+Deployment refresh - final
 Then open `http://localhost:8000`.
 Deployment refresh
 ## Safety scope
