@@ -47,7 +47,7 @@ python -m http.server 8000
 ```
 
 Then open `http://localhost:8000`.
-
+Deployment refresh
 ## Safety scope
 
 MYFIT AI is a wellness planning tool, not a diagnosis or treatment system. It does not analyze photos for BMI, body fat, obesity or medical conditions. When significant safety concerns are flagged, personalized nutrition targets and exercise programming are limited and professional guidance is recommended.
