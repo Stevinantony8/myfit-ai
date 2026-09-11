@@ -130,7 +130,7 @@ function renderStepBody(step){
     ${optionCard('🔥 Fat loss','Reduce body weight with a practical, sustainable routine.',p.goal,'fatloss','Nutrition + activity emphasis')}
     ${optionCard('💪 Muscle + fitness','Build strength and improve overall fitness.',p.goal,'muscle','Strength + protein emphasis')}
     ${optionCard('⚡ General fitness','Improve movement, stamina and lifestyle consistency.',p.goal,'fitness','Balanced plan')}
-  </div>
+  </div>`;
   if(step===2){
     const muscle=p.goal==='muscle';
     return `<div class="grid grid-2">
@@ -145,20 +145,6 @@ function renderStepBody(step){
       <div class="field"><label>Injury or medical concern</label><textarea data-field="injuryOrMedicalConcern" rows=3 placeholder="Optional: describe a concern for a safety prompt; do not use this tool for diagnosis.">${escapeHtml(p.injuryOrMedicalConcern||'')}</textarea></div>
     </div>`;
   }
-  return `<div class="grid grid-2">
-    <div class="field"><label>Diet style</label><select data-field="dietType"><option value="vegetarian" ${p.dietType==='vegetarian'?'selected':''}>Vegetarian</option><option value="eggetarian" ${p.dietType==='eggetarian'?'selected':''}>Eggetarian</option><option value="vegan" ${p.dietType==='vegan'?'selected':''}>Vegan</option><option value="jain" ${p.dietType==='jain'?'selected':''}>Jain-friendly</option><option value="non-vegetarian" ${p.dietType==='non-vegetarian'?'selected':''}>Non-vegetarian</option></select></div>
-    <div class="field"><label>Cuisine preference</label><select data-field="cuisinePreference"><option value="mixed" ${p.cuisinePreference==='mixed'?'selected':''}>Mixed Indian</option><option value="north-indian" ${p.cuisinePreference==='north-indian'?'selected':''}>North Indian</option><option value="south-indian" ${p.cuisinePreference==='south-indian'?'selected':''}>South Indian</option><option value="west-indian" ${p.cuisinePreference==='west-indian'?'selected':''}>West Indian</option></select></div>
-    <div class="field"><label>Meals per day</label><select data-field="mealsPerDay"><option value="2" ${Number(p.mealsPerDay)===2?'selected':''}>2</option><option value="3" ${Number(p.mealsPerDay)===3?'selected':''}>3</option><option value="4" ${Number(p.mealsPerDay)===4?'selected':''}>4</option><option value="5" ${Number(p.mealsPerDay)===5?'selected':''}>5</option><option value="6" ${Number(p.mealsPerDay)===6?'selected':''}>6</option></select></div>
-    <div class="field"><label>Cooking availability</label><select data-field="cookingAvailability"><option value="limited" ${p.cookingAvailability==='limited'?'selected':''}>Limited — quick meals</option><option value="moderate" ${p.cookingAvailability==='moderate'?'selected':''}>Moderate</option><option value="high" ${p.cookingAvailability==='high'?'selected':''}>I can cook</option></select></div>
-    <div class="field"><label>Budget</label><select data-field="budget"><option value="low" ${p.budget==='low'?'selected':''}>Budget-conscious</option><option value="medium" ${p.budget==='medium'?'selected':''}>Moderate</option><option value="flexible" ${p.budget==='flexible'?'selected':''}>Flexible</option></select></div>
-    <div class="field"><label>Eating out</label><select data-field="eatingOutFrequency"><option value="rarely" ${p.eatingOutFrequency==='rarely'?'selected':''}>Rarely</option><option value="sometimes" ${p.eatingOutFrequency==='sometimes'?'selected':''}>Sometimes</option><option value="often" ${p.eatingOutFrequency==='often'?'selected':''}>Often</option></select></div>
-    <div class="field"><label>Workout timing</label><select data-field="workoutTiming"><option value="pre" ${p.workoutTiming==='pre'?'selected':''}>Before a main meal</option><option value="post" ${p.workoutTiming==='post'?'selected':''}>After a main meal</option><option value="flexible" ${p.workoutTiming==='flexible'?'selected':''}>Flexible</option></select></div>
-    <div class="field"><label>Allergies</label><input data-field="allergies" value="${escapeHtml(p.allergies)}" placeholder="e.g. peanuts, dairy"><small class="tiny">Separate multiple allergies with commas.</small></div>
-    <div class="field"><label>Foods you dislike</label><input data-field="dislikedFoods" value="${escapeHtml(p.dislikedFoods)}" placeholder="e.g. paneer, fish"><small class="tiny">Separate multiple foods with commas.</small></div>
-    <div class="field"><label>Typical daily steps</label><input data-field="dailySteps" type="number" min="0" max="50000" value="${escapeHtml(p.dailySteps)}" placeholder="e.g. 7000"></div>
-    <div class="field"><label>Sleep (hours)</label><input data-field="sleepHours" type="number" min="3" max="14" step="0.5" value="${escapeHtml(p.sleepHours)}"></div>
-    <div class="field"><label>Stress level</label><select data-field="stressLevel"><option value="low" ${p.stressLevel==='low'?'selected':''}>Low</option><option value="moderate" ${p.stressLevel==='moderate'?'selected':''}>Moderate</option><option value="high" ${p.stressLevel==='high'?'selected':''}>High</option></select></div>
-  </div>`;
   if(step===4) return `<div class="safety-check-grid">
     <div class="card safety-check-card">
       <div class="eyebrow">SAFETY CHECK</div>
@@ -179,6 +165,21 @@ function renderStepBody(step){
       <div class="tiny" style="margin-top:7px;line-height:1.6">Pregnancy/postpartum, significant medical conditions, significant injuries, or eating-disorder concerns should be reviewed with an appropriate healthcare professional before following a personalized weight-loss or training plan.</div>
     </div>
   </div>`;
+  return `<div class="grid grid-2">
+    <div class="field"><label>Diet style</label><select data-field="dietType"><option value="vegetarian" ${p.dietType==='vegetarian'?'selected':''}>Vegetarian</option><option value="eggetarian" ${p.dietType==='eggetarian'?'selected':''}>Eggetarian</option><option value="vegan" ${p.dietType==='vegan'?'selected':''}>Vegan</option><option value="jain" ${p.dietType==='jain'?'selected':''}>Jain-friendly</option><option value="non-vegetarian" ${p.dietType==='non-vegetarian'?'selected':''}>Non-vegetarian</option></select></div>
+    <div class="field"><label>Cuisine preference</label><select data-field="cuisinePreference"><option value="mixed" ${p.cuisinePreference==='mixed'?'selected':''}>Mixed Indian</option><option value="north-indian" ${p.cuisinePreference==='north-indian'?'selected':''}>North Indian</option><option value="south-indian" ${p.cuisinePreference==='south-indian'?'selected':''}>South Indian</option><option value="west-indian" ${p.cuisinePreference==='west-indian'?'selected':''}>West Indian</option></select></div>
+    <div class="field"><label>Meals per day</label><select data-field="mealsPerDay"><option value="2" ${Number(p.mealsPerDay)===2?'selected':''}>2</option><option value="3" ${Number(p.mealsPerDay)===3?'selected':''}>3</option><option value="4" ${Number(p.mealsPerDay)===4?'selected':''}>4</option><option value="5" ${Number(p.mealsPerDay)===5?'selected':''}>5</option><option value="6" ${Number(p.mealsPerDay)===6?'selected':''}>6</option></select></div>
+    <div class="field"><label>Cooking availability</label><select data-field="cookingAvailability"><option value="limited" ${p.cookingAvailability==='limited'?'selected':''}>Limited — quick meals</option><option value="moderate" ${p.cookingAvailability==='moderate'?'selected':''}>Moderate</option><option value="high" ${p.cookingAvailability==='high'?'selected':''}>I can cook</option></select></div>
+    <div class="field"><label>Budget</label><select data-field="budget"><option value="low" ${p.budget==='low'?'selected':''}>Budget-conscious</option><option value="medium" ${p.budget==='medium'?'selected':''}>Moderate</option><option value="flexible" ${p.budget==='flexible'?'selected':''}>Flexible</option></select></div>
+    <div class="field"><label>Eating out</label><select data-field="eatingOutFrequency"><option value="rarely" ${p.eatingOutFrequency==='rarely'?'selected':''}>Rarely</option><option value="sometimes" ${p.eatingOutFrequency==='sometimes'?'selected':''}>Sometimes</option><option value="often" ${p.eatingOutFrequency==='often'?'selected':''}>Often</option></select></div>
+    <div class="field"><label>Workout timing</label><select data-field="workoutTiming"><option value="pre" ${p.workoutTiming==='pre'?'selected':''}>Before a main meal</option><option value="post" ${p.workoutTiming==='post'?'selected':''}>After a main meal</option><option value="flexible" ${p.workoutTiming==='flexible'?'selected':''}>Flexible</option></select></div>
+    <div class="field"><label>Allergies</label><input data-field="allergies" value="${escapeHtml(p.allergies)}" placeholder="e.g. peanuts, dairy"><small class="tiny">Separate multiple allergies with commas.</small></div>
+    <div class="field"><label>Foods you dislike</label><input data-field="dislikedFoods" value="${escapeHtml(p.dislikedFoods)}" placeholder="e.g. paneer, fish"><small class="tiny">Separate multiple foods with commas.</small></div>
+    <div class="field"><label>Typical daily steps</label><input data-field="dailySteps" type="number" min="0" max="50000" value="${escapeHtml(p.dailySteps)}" placeholder="e.g. 7000"></div>
+    <div class="field"><label>Sleep (hours)</label><input data-field="sleepHours" type="number" min="3" max="14" step="0.5" value="${escapeHtml(p.sleepHours)}"></div>
+    <div class="field"><label>Stress level</label><select data-field="stressLevel"><option value="low" ${p.stressLevel==='low'?'selected':''}>Low</option><option value="moderate" ${p.stressLevel==='moderate'?'selected':''}>Moderate</option><option value="high" ${p.stressLevel==='high'?'selected':''}>High</option></select></div>
+  </div>`;
+
 }
 
 function safetyAssessment(){
